@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <title>Antiobiotic sensitivity Test</title>
+    <meta title="description" content="Simulate Antibiotic sensitivity test (Kirby-Bauer Disk Diffusion test) virtually to see which antibiotic is effective against which strain of bacteria.">
+  </head>
+  <body role="main">
+    <section class="overlay" id="aboutSection">
+      <div class="about-section">
+        <h3>Antiobiotic sensitivity Test - Simulation</h3>
+        <p>The Antibiotic sensitivity test (also called <a class="external-link" href="https://bio.libretexts.org/Learning_Objects/Laboratory_Experiments/Microbiology_Labs/Microbiology_Labs_I/09%3A_Kirby-Bauer_(Antibiotic_Sensitivity)" title="Learn more" target="_blank">Kirby-Bauer disk diffusion test</a>) is used to determine which <a class="external-link" href="https://en.wikipedia.org/wiki/Antibiotic" title="Learn more" target="_blank">antibiotics</a> are effective against a specific strain of bacteria. The bacteria are spread across a petri dish and antibiotic discs are placed on the surface, then the dish is incubated to allow bacterial growth. If an antibiotic is effective, it prevents the bacteria from growing nearby, creating a clear circular area called the zone of inhibition (or zone of sensitivity). The larger the clear zone, the more sensitive the bacteria are to that antibiotic.</p>
+        <p>To use this simulation, select the bacterial strain to use. Then choose one or more antibiotics and drag them onto the dish. Then, press the Incubate button to begin the growth process. Watch carefully as the bacteria spread across the plate. Clear circular zones will appear around antibiotics that successfully inhibit bacterial growth. Compare the sizes of these zones to determine which antibiotic works best against the strain.</p>
+      </div>
+      <button id="closeAboutBtn">Got it!</button>
+    </section>
+    <div class="title-section">
+      <h1>Antiobiotic sensitivity Test</h1>
+      <p>Drag the antibiotics into the petri dish.</br> Incubate and watch bacteria grow.</p>
+      <button class="secondary" id="showAboutBtn">View Details</button>
+    </div>
+
+    <canvas id="canvas"></canvas>
+    <section class="ui">
+      <div class="ui-section">
+        <h4>Bacteria</h4>
+        <div class="bacteria">
+          <div class="bacterium selected" id="strain1">
+            <div class="figure"></div>
+          </div>
+          <div class="bacterium" id="strain2">
+            <div class="figure"></div>
+          </div>
+          <div class="bacterium" id="strain3">
+            <div class="figure"></div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="ui-section">
+        <h4>Antibiotics</h4>
+        <div class="antibiotics">
+          <div class="antibiotic">
+            <div draggable="true" class="draggable antibiotic-disk" id="A">
+            </div>
+            <h4>A</h4>
+          </div>
+          <div class="antibiotic">
+            <div draggable="true" class="draggable antibiotic-disk" id="B">
+            </div>
+            <h4>B</h4>
+          </div>
+          <div class="antibiotic">
+            <div draggable="true" class="draggable antibiotic-disk" id="C">
+            </div>
+            <h4>C</h4>
+          </div>
+        </div>
+      </div>
+      <div class="ui-section">
+        <button id="startBtn">Incubate</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </section>
+    <footer>
+      <a href="https://jeigsaw.xyz" target="_blank">
+        <svg width="15" height="13" viewBox="0 0 46 47" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M28.8592 6.7868L23.5481 3.08244C21.5011 1.65467 18.579 2.08728 17.0269 4.04791L12.6067 9.63151C13.6225 9.78154 14.6113 10.1561 15.4887 10.768C18.4365 12.8241 19.0152 16.7857 16.7801 19.6091C14.5449 22.4325 10.337 23.0555 7.38908 20.9994C6.51181 20.3876 5.84434 19.6069 5.39823 18.7373L0.978033 24.3209C-0.574078 26.2815 -0.172244 29.0325 1.87482 30.4602L21.9265 44.4457C23.9735 45.8735 26.8956 45.4409 28.4477 43.4803L44.4965 23.2073C46.0487 21.2467 45.6468 18.4957 43.5998 17.0679L37.9439 13.1231C39.0692 12.6945 40.0917 11.9764 40.8731 10.9893C43.1082 8.16588 42.5296 4.20434 39.5817 2.14825C36.6338 0.0921703 32.4258 0.715152 30.1907 3.53858C29.4093 4.52566 28.9718 5.65182 28.8592 6.7868Z"/>
+          </svg> Jeigsaw
+      </a> 2026. 
+      <a target="_blank" href="https://www.buymeacoffee.com/jeigsaw">Support me here!</a>
+      <p>Report issues or check out the code here.</p>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
